@@ -6,5 +6,5 @@ import HMAC
 def sign_key(key, date, region, service):
     k = ("AWS4" + key).encode()
     for part in (date, region, service, "aws4_request"):
-        k = HMAC.new(k, part.encode(), hashlib.sha256).digest()
+        k = hmac.new(k, part.encode(), hashlib.sha256).digest()
     return k
