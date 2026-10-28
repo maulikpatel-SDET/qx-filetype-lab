@@ -1,0 +1,7 @@
+# R11-16 Conda environment pinning a vulnerable crypto package.
+name: qx
+dependencies:
+  - python=3.12
+  - pip:
+    - pycrypto==2.6.1
+    - m2crypto==0.21.1

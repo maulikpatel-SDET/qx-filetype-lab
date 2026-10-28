@@ -1,0 +1,14 @@
+# R11-11 pyproject.toml pins crypto libraries, including an abandoned/vulnerable one.
+[project]
+name = "qx-filetype-lab"
+version = "1.0.0"
+dependencies = [
+  "pycrypto==2.6.1",      # abandoned, known vulnerable - must flag
+  "pyOpenSSL==0.13",      # very old
+  "cryptography>=42",
+  "passlib[bcrypt]>=1.7",
+]
+
+[tool.qx.crypto]
+default-signature = "RS256"
+default-kdf = "pbkdf2_sha1"

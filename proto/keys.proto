@@ -1,0 +1,16 @@
+// R11-10 Protocol Buffers: algorithm enum carrying RSA_2048 / ECDSA_P256 / 3DES.
+syntax = "proto3";
+package qx;
+
+enum KeyAlgorithm {
+  KEY_ALGORITHM_UNSPECIFIED = 0;
+  RSA_2048 = 1;
+  ECDSA_P256 = 2;
+  TRIPLE_DES = 3;
+  AES_256_GCM = 4;
+}
+
+message SigningKey {
+  KeyAlgorithm algorithm = 1;
+  bytes der = 2;             // private key bytes on the wire
+}

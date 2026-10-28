@@ -1,0 +1,15 @@
+# R11-13 OpenAPI 3 securitySchemes: JWT RS256 bearer + API key, 'none' alg allowed.
+openapi: 3.0.3
+info: { title: QX API, version: "1.0" }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-signing-alg: ["RS256", "HS256", "none"]
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+paths: {}
